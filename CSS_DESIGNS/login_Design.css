@@ -268,7 +268,7 @@ text-decoration: none;
 color: #1E5631;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
   .container {
     flex-direction: column;
   }
