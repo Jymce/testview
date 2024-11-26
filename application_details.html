@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/ff87496a7c.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png" href="static/image/cvsu_logo.png">
+    <title>Admission Form</title>
+    <link rel="stylesheet" href="application_details_design.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> 
+
+<style>
+
+
+
+
+</style>
+
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="header_top">
+        <div class="logo-section">
+            <img src="static\image\cvsu_logo.png" alt="Logo">
+            <div class="title">Admission Form</div>
+            </div>
+            <button class="return-button">Return</button>
+        </div>
+        <!-- <div class="image-placeholder">Image</div> -->
+    </div>
+
+    <header>
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress"></div>
+                <div class="progress-steps">
+                    <div class="progress-step active" data-step="1" onclick="updateProgress(this)">
+                        <p>Application Detail</p>
+                    </div>
+                    <div class="progress-step" data-step="2" onclick="updateProgress(this)">
+                        <p>Applicant Profile</p>
+                    </div>
+                    <div class="progress-step" data-step="3" onclick="updateProgress(this)">
+                        <p>Family Profile</p>
+                    </div>
+                    <div class="progress-step" data-step="4" onclick="updateProgress(this)">
+                        <p>Educational Profile</p>
+                    </div>
+                    <div class="progress-step" data-step="5" onclick="updateProgress(this)">
+                        <p>Upload Requirements</p>
+                    </div>
+
+                    <div class="progress-step" data-step="6" onclick="updateProgress(this)">
+                        <p>Schedule Appointment</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+    </header>
+         <!-- Form Section -->
+        <div class="form-container">
+
+            <section id="section-1" class="Application_Details">
+                <h1 id="Application Details">Application Details</h1>
+                <i class="fa-regular fa-file"></i>
+            </section>
+
+            <form action="#" method="post">
+                <div class="form-section">
+                    <label for="applicant">Type of Applicant:</label>
+                    <select id="applicant" name="applicant" required>
+                    </select>
+                </div>
+
+                <div class="form-section">
+                    <label for="SHS_TRACK">Senior High School Graduate Track:</label>
+                    <select id="SHS_TRACK" name="SHS_TRACK" required>
+                    </select>
+                </div>
+
+                <div class="form-section">
+                    <label for="SHS_TRACK">Senior High School Strand:</label>
+                    <select id="SHS_STRAND" name="SHS_STRAND" required>
+                    </select>
+                </div>
+
+                <div class="form-section">
+                    <label for="program">Preferred Program:</label>
+                    <select name="program" id="program" required>
+                    </select>
+                </div>
+
+                <div class="hr_container">
+                    <hr>
+                </div>
+
+                <section id="section-2" class="Application_Details">
+                    <h1 id="Applicant_Profile">Applicant Profile</h1>
+                    <i class="fa-solid fa-id-card"></i>
+                </section>
+
+                    <div class="image-upload-container">
+            
+                        <label for="user-image" class="image-upload-label">
+                            <span class="upload-text">Upload Your Image</span>
+                            <img class="imagePreview" id="user-image-preview" src="#" alt="Image Preview">
+                        </label>
+                        <input type="file" id="user-image" accept="image/*" style="display: none;" onchange="previewImage(this, 'user-image-preview')">
+                    </div>
+              
+                
+
+                <div class="form_indetifier">
+                    <h2>
+                        Personal Information
+                    </h2>
+                </div>
+
+                <form action="#" method="post">
+                    <div class="form-section">
+
+                        <label for="Full">Full Name 
+                        <input type="text" id="Full"> </label>
+
+                        <label for="Given">Given Name </label>
+                        <input type="text">
+
+                        <label for="Middle">Middle Name </label>
+                        <input type="text">
+
+                        <label for="Suffix">Suffix </label>
+                        <input type="text">
+
+                        <label for="Birth">Date of Birth </label>
+                        <input type="text">
+
+                        <label for="Contact">Contact Number </label>
+                        <input type="text">
+
+                        <label for="Nationality">Nationality </label>
+                        <select name="nationality" id="nationality"></select>
+
+                    </div>
+
+                    <div class="form_indetifier">
+                        <h2>
+                            Residential Address
+                        </h2>
+                    </div>
+
+                    <label for="Adress1">Adress Line 1 </label>
+                    <input type="text">
+
+                    <label for="Adress2">Adress Line 2 </label>
+                    <input type="text">
+
+                    <label for="City">City </label>
+                    <input type="text">
+
+                    <label for="State_Provice">State Provice Religion</label>
+                    <input type="text">
+
+                    <label for="Postal">Postal Code</label>
+                    <input type="text">
+
+                    <div class="hr_container">
+                        <hr>
+                    </div>
+
+                    <section id="section-3" class="Application_Details">
+                        <h1 id="Family">Family Profile</h1>
+                        <i class="fa-solid fa-house"></i>
+                    </section>
+    
+                    <div class="form_indetifier">
+                        <h2>
+                            Family Statistics
+                        </h2>
+                    </div>
+
+                    <label for="siblings">Number of siblings</label>
+                    <input type="text">
+
+                    <label for="nationality">Income Bracket</label>
+                    <select name="nationality" id="nationality"></select>
+
+                    <div class="form_indetifier">
+                        <h2>
+                            Father's Profile
+                        </h2>
+                    </div>
+
+                    <div class="checkbox_text_designs">
+                        <input type="checkbox" name="father" id="father">    
+                        <label for="father">Not Applicable</label>
+                    </div>
+
+                    <label for="Fathers-Name">Name</label>
+                    <input type="text">
+
+                    <label for="fathers-number">Contact Number</label>
+                    <input type="text">
+
+                    <label for="fathers_occupation">Occupation</label>
+                    <input type="text">
+
+                    <div class="checkbox_text_designs">
+                        <input type="checkbox" name="father_attended_college" id="father_attended_college">    
+                        <label for="father_attended_college">Has Attended College</label>
+                    </div>
+
+
+                    <div class="form_indetifier">
+                        <h2>
+                            Mother's Profile
+                        </h2>
+                    </div>
+
+                    <div class="checkbox_text_designs">
+                        <input type="checkbox" name="mother" id="mother">    
+                        <label for="mother">Not Applicable</label>
+                    </div>
+
+                    <label for="mothers-Name">Name</label>
+                    <input type="text">
+
+                    <label for="mothers-number">Contact Number</label>
+                    <input type="text">
+
+                    <label for="mother_occupation">Occupation</label>
+                    <input type="text">
+
+                    <div class="checkbox_text_designs">
+                        <input type="checkbox" name="mother_attended_college" id="mother_attended_college">    
+                        <label for="mother_attended_college">Has Attended College</label>
+                    </div>
+
+
+                    <div class="form_indetifier">
+                        <h2>
+                            Guradian's Profile
+                        </h2>
+                    </div>
+
+
+                    <label for="Guradian-Name">Name</label>
+                    <input type="text">
+
+                    <label for="Guradian-number">Contact Number</label>
+                    <input type="text">
+
+                    <label for="Guradian">Occupation</label>
+                    <input type="text">
+
+                    <div class="hr_container">
+                        <hr>
+                    </div>
+
+
+                    <section id="section-4" class="Application_Details">
+                        <h1 id="Education">Educational Profile</h1>
+                        <i class="fa-solid fa-school"></i>
+                    </section>
+    
+                    <div class="form_indetifier">
+                        <h2>
+                            Elementary*
+                        </h2>
+                    </div>
+
+                    <label for="elementary-school">School Name</label>
+                    <input type="text">
+
+                    <label for="elementary-address">School Address</label>
+                    <input type="text">
+
+                    <label for="elementary-type-school">Type of School</label>
+                    <select name="elementary-type-school" id="elementary-type-school"></select>
+
+                    <label for="elementary-graudated">Year Graduated</label>
+                    <input type="text">
+
+
+                    <div class="form_indetifier">
+                        <h2>
+                            Senior High School*
+                        </h2>
+                    </div>
+
+                    <label for="senior-school">School Name</label>
+                    <input type="text">
+
+                    <label for="senior-address">School Address</label>
+                    <input type="text">
+
+                    <label for="senior-type-school">Type of School</label>
+                    <select name="senior-type-school" id="senior-type-school"></select>
+
+                    <label for="senior-graudated">Year Graduated</label>
+                    <input type="text">
+
+                    <div class="form_indetifier">
+                        <h2>
+                            College*
+                        </h2>
+                    </div>
+
+                    <label for="college-school">School Name*</label>
+                    <input type="text">
+
+                    <label for="Enrolled-Program">Enrolled Program</label>
+                    <input type="text">
+
+                    <label for="college-address">School Adress</label>
+                    <select name="elementary-type-school" id="elementary-type-school"></select>
+
+                    <label for="college-type-school">Type of School</label>
+                    <select name="college-type-school" id="college-type-school"></select>
+
+                    <label for="college-graudated">Year Graduated</label>
+                    <input type="text">
+
+                    <div class="hr_container">
+                        <hr>
+                    </div>
+
+                    <section id="section-5" class="Application_Details">
+                        <h1 id="Requirements">Upload Requirements</h1>
+                        <i class="fa-solid fa-upload"></i>
+                    </section>
+
+
+
+                    <div class="instruction"> 
+                        <div class="box">
+                            <h3>Instructions</h3>
+                            <ul>
+                                <li>Upload the scanned pages of your requirements individualy.</li>
+                                <li>You can only upload PNG, JPED, and BMP images</li>
+                                <li>There is a 1mb (1024 kb) total size limit per requirements</li>
+                            </ul>
+                        </div>
+                    </div>
+                   
+                    <div class="upload-requirements"> 
+                    <div class="image-upload-container">
+            
+                        <label for="report-card" class="image-upload-label">
+                            <span class="upload-text">Report Card</span>
+                            <img class="imagePreview" id="report-card-preview" src="#" alt="Image Preview">
+                        </label>
+                        <input type="file" id="report-card" accept="image/*" style="display: none;" onchange="previewImage(this, 'report-card-preview')">
+                    </div>
+
+                    <div class="image-upload-container">
+            
+                        <label for="form-137" class="image-upload-label">
+                            <span class="upload-text">Form 137</span>
+                            <img class="imagePreview" id="form-137-preview" src="#" alt="Image Preview">
+                        </label>
+                        <input type="file" id="form-137" accept="image/*" style="display: none;" onchange="previewImage(this, 'form-137-preview')">
+                    </div>
+
+                    <div class="image-upload-container">
+            
+                        <label for="passport" class="image-upload-label">
+                            <span class="upload-text" style="padding-left: 5px; padding-right: 5px; font-size: 13px;">Passport(For foreign applicants)</span>
+                            <img class="imagePreview" id="passport-preview" src="#" alt="Image Preview">
+                        </label>
+                        <input type="file" id="passport" accept="image/*" style="display: none;" onchange="previewImage(this, 'passport-preview')">
+                    </div>
+
+                    <div class="image-upload-container">
+            
+                        <label for="additional" class="image-upload-label">
+                            <span class="upload-text" style="padding-left: 10px; padding-right: 10px;">Addition Documenets (if any)</span>
+                            <img class="imagePreview" id="additional-preview" src="#" alt="Image Preview">
+                        </label>
+                        <input type="file" id="additional" accept="image/*" style="display: none;" onchange="previewImage(this, 'additional-preview')">
+                    </div>
+
+                    </div>
+
+                   
+                    
+                    
+                    <div class="hr_container">
+                        <hr>
+                    </div>
+
+
+                    <section id="section-6" class="Application_Details">
+                        <h1 id="Appointment">Schedule Appointment</h1>
+                        <i class="fa-regular fa-calendar-check"></i>                    
+                    </section>
+
+                    <label for="appointment-date">Select Date</label>
+                    <input type="date" id="appointment-date"> 
+    
+                    <label for="appointment-time"> Select Time</label>
+                    <input type="time" id="appointment-time">
+
+                    <div class="button-container">
+                        <a class="appointment" href="">Add Appointment</a>
+                    </div>
+
+                    
+                    
+                    
+                    <div class="hr_container">
+                        <hr>
+                    </div>
+
+                    <div class="button-container">
+                        <a class="cancel" href="#">Cancel Application</a>
+                        <a class="update" href="#">Update Application</a>
+                    </div>
+
+                  
+                 
+
+                    </section>
+                </form>
+            </div>
+        </div>
+
+        <script>
+            // Get all progress steps and sections
+            const progressSteps = document.querySelectorAll('.progress-step');
+            const sections = document.querySelectorAll('section');
+        
+            // Function to update the progress bar based on visible section
+            const updateProgressBar = () => {
+                let index = sections.length - 1;
+        
+                // Find the section currently in the viewport
+                sections.forEach((section, i) => {
+                    const rect = section.getBoundingClientRect();
+                    if (rect.top <= window.innerHeight / 2) {
+                        index = i;
+                    }
+                });
+        
+                // Update the progress bar and steps
+                progressSteps.forEach((step, i) => {
+                    if (i <= index) {
+                        step.classList.add('active');
+                    } else {
+                        step.classList.remove('active');
+                    }
+                });
+        
+                const progress = document.querySelector('.progress');
+                const percentage = ((index + 1) / progressSteps.length) * 100;
+                progress.style.width = `${percentage}%`;
+            };
+        
+            // Listen for scroll and call updateProgressBar
+            window.addEventListener('scroll', updateProgressBar);
+        
+            // Scroll to section when clicking a progress step
+            progressSteps.forEach((step, i) => {
+                step.addEventListener('click', () => {
+                    sections[i].scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+        
+            // Initialize progress bar on page load
+            document.addEventListener('DOMContentLoaded', updateProgressBar);
+       
+            function previewImage(input, previewId) {
+    if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            document.getElementById(previewId).src = e.target.result;
+            document.getElementById(previewId).style.display = 'block';
+        }
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const progressSteps = document.querySelectorAll('.progress-step p');
+
+    function updateStepText() {
+        if (window.innerWidth <= 768) {
+            // Shortened text for mobile view
+            const mobileTexts = [
+                "Step 1",
+                "Step 2",
+                "Step 3",
+                "Step 4",
+                "Step 5",
+                "Step 6"
+            ];
+            progressSteps.forEach((step, index) => {
+                step.textContent = mobileTexts[index];
+            });
+        } else {
+            // Full text for larger screens
+            const desktopTexts = [
+                "Application Detail",
+                "Applicant Profile",
+                "Family Profile",
+                "Educational Profile",
+                "Upload Requirements",
+                "Schedule Appointment"
+            ];
+            progressSteps.forEach((step, index) => {
+                step.textContent = desktopTexts[index];
+            });
+        }
+    }
+
+    // Call the function on page load and when the window resizes
+    updateStepText();
+    window.addEventListener("resize", updateStepText);
+});
+
+       </script>
+        
+</body>
+
+</html>
